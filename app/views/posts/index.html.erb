@@ -1,11 +1,13 @@
-<h1>Posts</h1>
-
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.user.username if current_user %>
-      <%= post.title %>
-      <%= post.content %>
-    </li>
-  <% end %>
-</ul>
+<% @posts.each do |post| %>
+<div class='col-sm'>
+    <div class="card-columns">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.user.username if current_user %></h5>
+          <p class="card-text"><%= post.content %></p>
+          <p class="card-text"><small class="text-muted"><%= post.created_at %></small></p>
+        </div>
+      </div>
+    </div>
+</div>
+<% end %> 
