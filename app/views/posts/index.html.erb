@@ -3,6 +3,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
+      <%= post.user.username if current_user %>
       <%= post.title %>
       <%= post.content %>
     </li>
